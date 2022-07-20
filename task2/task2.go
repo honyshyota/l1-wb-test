@@ -8,11 +8,11 @@ import (
 )
 
 func main() {
-	var arr = []int{2, 4, 6, 8, 10}
+	var arr = [5]int{2, 4, 6, 8, 10}
 	fmt.Println(arrayToSquare(arr))
 }
 
-func arrayToSquare(arr []int) []int {
+func arrayToSquare(arr [5]int) []int {
 	var wg sync.WaitGroup // инициализируем группу ожидания
 	routinesAmount := len(arr)
 	wg.Add(routinesAmount) // колличество рутин соответствует длине переданного массива
