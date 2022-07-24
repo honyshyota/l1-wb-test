@@ -2,30 +2,31 @@ package main
 
 import "fmt"
 
-type human struct {
+type human struct { // родительская структура
 	age    int
 	growth int
 	name   string
 }
 
-type action struct {
-	human *human
+type action struct { // дочерняя
+	*human
 }
 
-func (a *action) setParameters(age int, growth int, name string) {
-	a.human = &human{
-		age:    age,
-		growth: growth,
-		name:   name,
-	}
+func (h *human) setParameters(age int, growth int, name string) { // метод родительской структуры
+	h.age = age
+	h.growth = growth
+	h.name = name
 }
 
-func (a *action) getParameters() *human {
-	return a.human
+func (h *human) getParameters() *human { // 2й метод
+	return h
 }
 
 func main() {
-	var human action                      // Инициализация переменной типа action, nil значение в памяти
-	human.setParameters(24, 186, "Petya") // Передача значений в переменную human по указателю, присвоение адресса в памяти
-	fmt.Println(human.getParameters())
+	action := &action{ // инициализируем переменную action
+		&human{}, // в анонимном поле human инициализируем пустую переменную типа human
+	}
+
+	action.setParameters(26, 186, "Petya") // и так как поле в дочерней структуре анонимное
+	fmt.Println(action.getParameters())    // мы можем пользоваться методами родительской структуры
 }
