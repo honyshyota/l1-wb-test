@@ -7,6 +7,8 @@ import (
 	"strconv"
 )
 
+/*Дана переменная int64. Разработать программу которая устанавливает i-й бит в 1 или 0.*/
+
 var number int
 var positionBit int
 var variable int

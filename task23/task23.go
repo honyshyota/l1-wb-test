@@ -5,6 +5,8 @@ import (
 	"fmt"
 )
 
+/*Удалить i-ый элемент из слайса.*/
+
 func main() {
 	var i int
 	flag.IntVar(&i, "i", 3, "delete slice element")

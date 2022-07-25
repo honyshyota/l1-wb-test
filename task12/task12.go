@@ -2,6 +2,8 @@ package main
 
 import "fmt"
 
+/*Имеется последовательность строк - (cat, cat, dog, cat, tree) создать для нее собственное множество.*/
+
 func main() {
 	s := []string{"cat", "cat", "dog", "cat", "tree"} // инициализируем массив по заданию
 

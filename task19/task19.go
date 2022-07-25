@@ -5,6 +5,9 @@ import (
 	"fmt"
 )
 
+/*Разработать программу, которая переворачивает подаваемую на ход
+строку (например: «главрыба — абырвалг»). Символы могут быть unicode.*/
+
 func main() {
 	var s string
 	flag.StringVar(&s, "s", "golang", "income string")
